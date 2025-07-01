@@ -277,7 +277,7 @@ body {
 .pdf-header h1 {
   position: relative;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   z-index: 1;
 }
 
@@ -291,18 +291,20 @@ body {
 }
 
 .pdf-body {
-  padding: 20px 0;
+  padding: 0px 0;
+  line-height: 1.5; /* << AJUSTADO: Aumentamos um pouco a altura da linha para o texto respirar */
 }
 
 .pdf-section {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-top: 14px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .pdf-section h2 {
   color: var(--dark-blue);
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 8px; 
   padding-bottom: 5px;
   border-bottom: 2px solid var(--primary-blue);
   display: inline-block;
@@ -312,11 +314,29 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 6px; /* << AJUSTADO: Aumentamos a margem de 2px para 6px. Este é o nosso controle principal! */
 }
 
+/* Classe para controlar os campos de observação separadamente */
+.pdf-field-full {
+  flex-basis: 100%;
+  margin-top: 10px; 
+}
+
+.pdf-field-full .pdf-label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.pdf-field-full .pdf-value {
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-bottom: none; 
+}
+
+
 .pdf-field {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   flex: 1;
   min-width: 200px;
 }
@@ -329,7 +349,7 @@ body {
 
 .pdf-value {
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
 .pdf-preview {
@@ -338,17 +358,17 @@ body {
 }
 
 .pdf-footer {
-  background-color: #2196F3; /* Azul mais próximo ao da imagem */
+  background-color: #2196F3;
   color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   font-size: 14px;
   position: absolute;
   bottom: 0;
-  left: -40px; /* Compensar o padding do pdf-preview */
+  left: -40px; 
   right: -40px;
-  width: calc(100% + 80px); /* Compensar as margens negativas */
-  border-top: none; /* Remover qualquer borda que possa causar linha */
+  width: calc(100% + 80px); 
+  border-top: none; 
 }
 
 .pdf-footer a {

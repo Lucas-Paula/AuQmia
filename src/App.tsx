@@ -24,6 +24,8 @@ interface FormData {
   defecouDetalhes: string;
   urinou: string;
   urinouDetalhes: string;
+  vomitou: string;
+  vomitouDetalhes: string;
   comeu: string;
   tipoAlimentacao: string[];
   intercorrencias: string;
@@ -55,6 +57,8 @@ function App() {
       defecouDetalhes: '',
       urinou: '',
       urinouDetalhes: '',
+      vomitou: '',
+      vomitouDetalhes: '',
       comeu: '',
       tipoAlimentacao: [],
       intercorrencias: '',
@@ -366,6 +370,21 @@ function App() {
                   />
                 </div>
               </div>
+
+              <div className="form-row">
+                <div className="form-group radio-group">
+                  <label>Vomitou:</label>
+                  <div className="radio-options">
+                    <label><input type="radio" value="Sim" {...register('vomitou', { required: true })} /> Sim</label>
+                    <label><input type="radio" value="Não" {...register('vomitou', { required: true })} /> Não</label>
+                  </div>
+                  {errors.vomitou && <span className="error-message">Campo obrigatório</span>}
+                </div>
+                <div className="form-group">
+                  <label htmlFor="vomitouDetalhes">Detalhes:</label>
+                  <input type="text" id="vomitouDetalhes" {...register('vomitouDetalhes')} />
+                </div>
+              </div>
               
               <div className="form-row">
                 <div className="form-group radio-group">
@@ -590,6 +609,12 @@ function App() {
                       </span>
                     </div>
                   </div>
+
+                   <div className="pdf-row">
+                  <div className="pdf-field"><span className="pdf-label">Vomitou:</span> <span className="pdf-value">{formData?.vomitou}</span></div>
+                  <div className="pdf-field"><span className="pdf-label">Detalhes:</span> <span className="pdf-value">{formData?.vomitouDetalhes || 'N/A'}</span></div>
+                </div>
+              
                 </div>
                 
                 <div className="pdf-section">

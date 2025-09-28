@@ -14,8 +14,6 @@ interface FormData {
   paciente: string;
   sexo: string;
   especie: string;
-  idade: string;
-  peso: string;
   tutor: string;
   diagnostico: string;
   estadoGeral: string;
@@ -47,8 +45,6 @@ function App() {
       paciente: '',
       sexo: '',
       especie: '',
-      idade: '',
-      peso: '',
       tutor: '',
       diagnostico: '',
       estadoGeral: '',
@@ -226,23 +222,7 @@ function App() {
                   {errors.especie && <span className="error-message">Campo obrigatório</span>}
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="idade">Idade:</label>
-                  <input 
-                    type="text" 
-                    id="idade" 
-                    {...register('idade')}
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="peso">Peso:</label>
-                  <input 
-                    type="text" 
-                    id="peso" 
-                    {...register('peso')}
-                  />
-                </div>
+              
               </div>
               
               <div className="form-group">
@@ -533,15 +513,6 @@ function App() {
                       <span className="pdf-value">{formData?.especie}</span>
                     </div>
                     
-                    <div className="pdf-field">
-                      <span className="pdf-label">Idade:</span>
-                      <span className="pdf-value">{formData?.idade}</span>
-                    </div>
-                    
-                    <div className="pdf-field">
-                      <span className="pdf-label">Peso:</span>
-                      <span className="pdf-value">{formData?.peso}</span>
-                    </div>
                   </div>
                   
                   <div className="pdf-field">
